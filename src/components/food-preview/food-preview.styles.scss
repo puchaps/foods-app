@@ -1,0 +1,81 @@
+.food-preview {
+  width: 70%;
+  margin: 10vh auto;
+  text-align: center;
+
+  .food-preview-title {
+    h1 {
+      position: relative;
+      font-size: 3vw;
+
+      &:after {
+        content: " ";
+        position: absolute;
+        height: 2.5px;
+        background-color: #ffffff;
+        width: 10%;
+        bottom: 0;
+        right: 45%;
+        opacity: 0.5;
+      }
+    }
+  }
+
+  .food-preview-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 100px;
+  }
+};
+
+@media screen and (max-width: 1440px) {
+  .food-preview {
+    width: 70%;
+
+    .food-preview-title {
+      h1 {
+        font-size: 60px;
+      }
+      
+    }
+    .food-preview-items {
+      flex-direction: column;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .food-preview {
+    width: 80%;
+
+    .food-preview-title {
+      h1 {
+        font-size: 60px;
+      }
+      
+    }
+    .food-preview-items {
+      flex-direction: column;
+      margin-top: 50px;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .food-preview {
+    width: 90%;
+
+    .food-preview-title {
+      h1 {
+        font-size: 60px;
+      }
+      
+    }
+
+    .food-preview-items {
+      flex-direction: column;
+      margin-top: 50px;
+    }
+  }
+}

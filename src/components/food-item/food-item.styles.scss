@@ -1,0 +1,137 @@
+.food-item {
+  width: 49%;
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+
+  &:nth-child(1), &:nth-child(2) {
+    margin-top: 0;
+  }
+
+  .food-item-image {
+    width: 200px;
+    height: 160px;
+    border-radius: 5px;
+
+    img {
+      width: 200px;
+      height: 160px;
+      border-radius: 5px;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      object-fit:cover;
+    }
+  }
+
+  .food-item-descr {
+    margin-left: 10px;
+
+    .food-item-name-price {
+      display: flex;;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 5px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+
+      .name, .price {
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 20px;
+      }
+
+      .price {
+        padding: 2px 4px;
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+    }
+
+    .food-item-info {
+      text-align: left;
+      margin-top: 10px;
+      font-size: 17px;
+      opacity: 0.8;
+      line-height: 1.5;
+    }
+  }
+};
+
+@media screen and (max-width: 1440px) {
+  .food-item {
+    margin-top: 30px;
+    width: 100%;
+    
+
+    &:nth-child(1), &:nth-child(2) {
+      margin-top: 0;
+    }
+
+    &:nth-child(2) {
+      margin-top: 30px;
+    }
+  }
+};
+
+@media screen and (max-width: 1024px) {
+  .food-item {
+    margin-top: 30px;
+    width: 100%;
+    
+
+    &:nth-child(1), &:nth-child(2) {
+      margin-top: 0;
+    }
+
+    &:nth-child(2) {
+      margin-top: 30px;
+    }
+  }
+};
+
+@media screen and (max-width: 768px) {
+  .food-item {
+    margin-top: 30px;
+    width: 100%;
+    
+
+    &:nth-child(1), &:nth-child(2) {
+      margin-top: 0;
+    }
+
+    &:nth-child(2) {
+      margin-top: 30px;
+    }
+  }
+};
+
+@media screen and (max-width: 600px) {
+  .food-item {
+    margin-top: 30px;
+    width: 100%;
+    flex-direction: column;
+
+    &:nth-child(1), &:nth-child(2) {
+      margin-top: 0;
+    }
+
+    &:nth-child(2) {
+      margin-top: 30px;
+    }
+
+    .food-item-image  {
+      margin: 0 auto;
+    }
+    
+    .food-item-descr {
+      .food-item-name-price {
+        margin-top: 10px;
+        
+        .name, .price {
+          font-size: 16px;
+        }
+      }
+
+      .food-item-info  {
+        font-size: 15px;
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+  font-family: 'Mukta Vaani', sans-serif;
+  font-size: 14px;
+  color: #ffffff;
+  background-color: #076c68;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+
+  h1,h2,h3,h4,h5,h6, menu {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+*, 
+*:before,
+*:after {
+  box-sizing: border-box;
+}
