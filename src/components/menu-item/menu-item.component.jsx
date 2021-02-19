@@ -1,12 +1,16 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+import React from "react";
 
-import './menu-item.styles.scss';
+import "./menu-item.styles.scss";
 
-const MenuItem = ({ category, choosedCategory }) => {
-  return (
-    <div className="menu-item" onClick = {() => choosedCategory(category)}>
-      {category}
-    </div>
-  );
-};
+const MenuItem = ({ onCategoryName, handleChosenCategory }) => (
+  <div
+    className="menu-item"
+    onClick={() => handleChosenCategory(onCategoryName)}
+  >
+    {onCategoryName}
+  </div>
+);
 
 export default MenuItem;

@@ -1,6 +1,15 @@
-.loadre-image {
+.loader-image {
   display: block;
   width: 10%;
   margin: 30vh auto;
-  
+  animation: animationLoader 1s ease-in infinite;
+}
+
+@keyframes animationLoader {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

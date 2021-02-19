@@ -1,21 +1,19 @@
-import './loader.styles.scss';
+import React from "react";
 
-const Loader = ({ loader, children }) => {
-  if (loader) {
+import "./loader.styles.scss";
+
+const Loader = ({ onLoader, children }) => {
+  if (onLoader) {
     return (
-      <img 
-        className = 'loadre-image'
-        src='https://cdn.dribbble.com/users/503653/screenshots/3143656/fluid-loader.gif'
+      <img
+        className="loader-image"
+        src="https://cdn4.iconfinder.com/data/icons/feather/24/loader-512.png"
         alt="loader"
       />
     );
-  };
+  }
 
-  return(
-    <div className="loader">
-      {children}
-    </div>
-  );
+  return children;
 };
 
 export default Loader;

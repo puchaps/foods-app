@@ -3,6 +3,7 @@
   margin-top: 30px;
   display: flex;
   justify-content: space-between;
+  animation: opacity 1.5s ease;
 
   &:nth-child(1), &:nth-child(2) {
     margin-top: 0;
@@ -51,6 +52,14 @@
       opacity: 0.8;
       line-height: 1.5;
     }
+  }
+};
+
+@keyframes opacity {
+  from {
+    opacity: 0;
+  } to {
+    opacity: 1;
   }
 };
 

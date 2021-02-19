@@ -1,32 +1,34 @@
-import { call, put, all, takeLatest } from 'redux-saga/effects';
+import { call, put, all, takeLatest } from "redux-saga/effects";
 
-import { 
-  converCollectionFromFireStore,
-  getCollectionSnapShotFromFireStore
-} from '../../../../firebase/firebase';
+import {
+  transformCollectionFromFireStore,
+  getCollectionSnapShotFromFireStore,
+} from "../../../../firebase/firebase";
 
-import { GET_COLLECTION_START } from '../types/food.types';
-import { getCollectionFailedAC, getCollectionSuccsesAC } from '../actions/food.actions';
+import { GET_COLLECTION_START } from "../types/food.types";
+import {
+  getCollectionFailedAC,
+  getCollectionSuccessAC,
+} from "../actions/food.actions";
 
-//////////////////--GET_COLLECTION--//////////////////
 function* getCollection() {
   try {
-    const snapSotCollection = yield getCollectionSnapShotFromFireStore(); 
+    const snapSotCollection = yield call(getCollectionSnapShotFromFireStore);
 
-    const converdCollection = yield call(converCollectionFromFireStore, snapSotCollection);
-    
-    yield put(getCollectionSuccsesAC(converdCollection));
-  } catch(error) {
+    const transformCollection = yield call(
+      transformCollectionFromFireStore,
+      snapSotCollection
+    );
+
+    yield put(getCollectionSuccessAC(transformCollection));
+  } catch (error) {
     yield put(getCollectionFailedAC(error));
   }
-};
+}
 function* getCollectionSaga() {
   yield takeLatest(GET_COLLECTION_START, getCollection);
-};
-//////////////////--GET_COLLECTION--//////////////////
+}
 
 export default function* foodSagas() {
-  yield all([
-    call(getCollectionSaga)
-  ]);
-};
+  yield all([call(getCollectionSaga)]);
+}

@@ -1,36 +1,36 @@
-import { useEffect } from "react";
+import React, { useCallback, useEffect } from "react";
 import { connect } from "react-redux";
 
 import { getCollectionStartAC } from "./redux/reducer/food/actions/food.actions";
 import { selectorLoaderToggle } from "./redux/reducer/food/selectors/food.selectors";
 
 import FoodPreview from "./components/food-preview/food-preview.component";
-import Loader from './components/loader/loader.component';
+import Loader from "./components/loader/loader.component";
 
-const App = ({ getCollectionStart, loaderToggle }) => {
+const App = ({ handleGetCollectionStart, onLoader }) => {
+  const handleUseEffect = useCallback(() => {
+    handleGetCollectionStart();
+  }, [handleGetCollectionStart]);
 
   useEffect(() => {
-    getCollectionStart();
-  }, []);
+    handleUseEffect();
+  }, [handleUseEffect]);
 
   return (
     <>
-      <Loader loader = {loaderToggle}>
-        <FoodPreview/>
+      <Loader onLoader={onLoader}>
+        <FoodPreview />
       </Loader>
     </>
   );
-}
+};
 
-const mapStateToProps = state => ({
-  loaderToggle: selectorLoaderToggle(state)
+const mapStateToProps = (state) => ({
+  onLoader: selectorLoaderToggle(state),
 });
 
-const mapDispatchToProps = dispatch => ({
-  getCollectionStart: () => dispatch(getCollectionStartAC())
+const mapDispatchToProps = (dispatch) => ({
+  handleGetCollectionStart: () => dispatch(getCollectionStartAC()),
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
